@@ -1,4 +1,4 @@
-import { Project, Table, TableData, TableSchema } from "./types";
+import { Project, Table, TableData, TableSchema } from "./types.js";
 
 export interface Database {
     getAllTables(schema: string): Promise<Table[]>;

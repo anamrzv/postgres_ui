@@ -26,6 +26,8 @@ services:
       dockerfile: Dockerfile
     container_name: postgres-ui-frontend
     restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-90}:90"
     depends_on:
       - psql_ui_backend
     networks:
