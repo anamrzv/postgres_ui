@@ -12,4 +12,5 @@ export interface Database {
     addProject(project: Project): Promise<boolean>;
     getFullNames(): Promise<string[]>;
     getProjectNames(): Promise<string[]>;
+    getProjectsByPerson(fullName: string): Promise<{ id: string; name: string }[]>;
 }

@@ -14,3 +14,8 @@ export const getFullNames = () => {
 export const getProjectNames = () => {
   return axios.get('/forms/project_names')
 }
+
+// Get projects by person (fullName)
+export const getProjectsByPerson = (fullName) => {
+  return axios.get('/forms/projects_by_person', { params: { fullName } })
+}

@@ -25,6 +25,21 @@ router.get('/project_names', async (req: any, res: any, next: any) => {
     }
 });
 
+// Get projects for a specific person
+router.get('/projects_by_person', async (req: any, res: any, next: any) => {
+    try {
+        const { fullName } = req.query;
+        if (!fullName) {
+            return res.status(400).json({ success: false, message: 'fullName is required' });
+        }
+        const db = PostgresDatabase.getDatabase();
+        const result = await db.getProjectsByPerson(fullName as string);
+        res.json({ success: true, data: result });
+    } catch (error) {
+        next(error);
+    }
+});
+
 // Create new row
 router.post('/new_project', async (req: any, res: any, next: any) => {
     try {

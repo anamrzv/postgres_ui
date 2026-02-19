@@ -358,4 +358,20 @@ export class PostgresDatabase implements Database {
     }
   }
 
+  public async getProjectsByPerson(fullName: string): Promise<{ id: string; name: string }[]> {
+    if (this.pool === null) {
+      throw new Error("Database connection not initialized");
+    }
+    try {
+      const query = {
+        text: `SELECT "id", "name" FROM "ai_profiles"."user_projects" WHERE "profile_id" = $1 AND "never_regenerate" = false ORDER BY "from"`,
+        values: [fullName],
+      };
+      const result = await this.pool.query(query);
+      return result.rows.map(r => ({ id: r.id, name: r.name }));
+    } catch (error) {
+      throw error;
+    }
+  }
+
 }

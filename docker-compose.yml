@@ -27,6 +27,8 @@ services:
       dockerfile: Dockerfile
     container_name: postgres-ui-frontend
     restart: unless-stopped
+    environment:
+      VITE_N8N_API_KEY: ${VITE_N8N_API_KEY}
     depends_on:
       - psql_ui_backend
     networks:
