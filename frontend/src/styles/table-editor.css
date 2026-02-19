@@ -1,0 +1,98 @@
+.table-editor {
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.table-cell-content {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.table-cell-expanded {
+  white-space: normal;
+  word-break: break-word;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.expand-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Record dialog ──────────────────────────────────── */
+.record-form {
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  font-size: 13px;
+}
+
+.required-star {
+  color: var(--color-coral);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.field-type {
+  font-size: 11px;
+  font-weight: 400;
+  color: #b0b8cc;
+  background: #f3f4f8;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-left: auto;
+  text-transform: lowercase;
+}
+
+.bool-wrap {
+  padding: 6px 0;
+}
+
+.dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.required-hint {
+  font-size: 12px;
+  color: #909399;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Global Element Plus font override */
+.el-button,
+.el-input,
+.el-input__inner,
+.el-select,
+.el-table,
+.el-dialog,
+.el-menu,
+.el-menu-item,
+.el-tag,
+.el-pagination,
+.el-form-item__label,
+.el-tooltip__popper,
+.el-message,
+.el-message-box {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Global tooltip width cap — used outside scoped components */
+.table-tooltip,
+.table-tooltip .el-popper,
+.table-tooltip.el-tooltip__popper {
+  max-width: 500px !important;
+  width: 500px !important;
+}

@@ -1,0 +1,68 @@
+.forms-page {
+  width: 100%;
+}
+
+.tiles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-tile {
+  width: 220px;
+  padding: 28px 20px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8e8f0;
+  border-top: 3px solid var(--color-violet);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  user-select: none;
+}
+
+.form-tile:hover {
+  box-shadow: 0 6px 24px rgba(145, 90, 240, 0.15);
+  transform: translateY(-3px);
+}
+
+.tile-title {
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.tile-desc {
+  font-size: 12px;
+  color: #909399;
+}
+
+.divider-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-violet);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.array-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.array-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.array-item .el-input {
+  flex: 1;
+}

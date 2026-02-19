@@ -1,0 +1,11 @@
+.tables-list {
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
