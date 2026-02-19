@@ -12,9 +12,6 @@ RUN npm install
 # Copy source code
 COPY src ./src
 
-# Copy Docker env file
-COPY .env.docker .env
-
 # Build TypeScript
 RUN npm run build
 
