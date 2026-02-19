@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Backend API
+  psql_ui_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: postgres-ui-backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT:-5432}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PORT: 3000
+      NODE_ENV: production
+    networks:
+      - postgres_ui_network
+
+  # Frontend (nginx + proxy /api → backend)
+  psql_ui_frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: postgres-ui-frontend
+    restart: unless-stopped
+    depends_on:
+      - psql_ui_backend
+    networks:
+      - postgres_ui_network
+
+networks:
+  postgres_ui_network:
+    driver: bridge
