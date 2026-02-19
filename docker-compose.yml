@@ -18,6 +18,7 @@ services:
       NODE_ENV: production
     networks:
       - postgres_ui_network
+      - vpn-net
 
   # Frontend (nginx + proxy /api → backend)
   psql_ui_frontend:
@@ -26,13 +27,13 @@ services:
       dockerfile: Dockerfile
     container_name: postgres-ui-frontend
     restart: unless-stopped
-    ports:
-      - "${FRONTEND_PORT:-90}:90"
     depends_on:
       - psql_ui_backend
     networks:
       - postgres_ui_network
-
+      - vpn-net
 networks:
   postgres_ui_network:
     driver: bridge
+  vpn-net:
+    external: true
