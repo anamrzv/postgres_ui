@@ -13,6 +13,10 @@ RUN npm install
 COPY src ./src
 COPY index.html ./
 
+# Build arg injected at build time so Vite can embed it
+ARG VITE_N8N_API_KEY
+ENV VITE_N8N_API_KEY=$VITE_N8N_API_KEY
+
 # Build
 RUN npm run build
 
